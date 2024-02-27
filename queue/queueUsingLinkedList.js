@@ -12,19 +12,19 @@ class LinkedListStack{
         this.size = 0;
     }
 
-    push(value){
+    enqueue(value){
         const node = new Node(value);
         if(this.size == 0 ){
             this.head = node;
             this.tail = node;
         }else{
-            node.next = this.head;
-            this.head = node;
+            this.tail.next = node;
+            this.tail = node;
         }
         this.size ++;
     }
 
-    pop(){
+    dequeue(){
         if(this.size == 0){
             return ;
         }else{
@@ -59,13 +59,14 @@ class LinkedListStack{
 }
 
 let stack1 = new LinkedListStack();
-stack1.push(10);
-stack1.push(20);
-stack1.push(30);
-stack1.push(50);
-stack1.print();
-stack1.pop();
+
+stack1.enqueue(10);
+stack1.enqueue(20);
+stack1.enqueue(30);
 stack1.print();
 stack1.peek();
 stack1.getTail();
-
+stack1.dequeue();
+stack1.print();
+stack1.peek();
+stack1.getTail();
