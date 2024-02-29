@@ -3,7 +3,6 @@ class HashTable{
         this.table = new Array(size);
         this.size  = size;
     }
-
     hash(key){
         let total = 0 ; 
         for ( let i = 0 ; i < key.length ; i ++){
@@ -11,7 +10,6 @@ class HashTable{
         }
         return total % this.size; 
     }
-
     set(key,value){
         let index = this.hash(key);
         const bucket = this.table[index];
@@ -26,9 +24,6 @@ class HashTable{
             }
         }
     }
-
-    
-
     get(key){
         let index = this.hash(key);
         const bucket = this.table(index);
@@ -40,7 +35,6 @@ class HashTable{
         }
         return undefined;
     }
-
     remove(key){
         let index = this.hash(key);
         const bucket = this.table[index];
@@ -51,7 +45,6 @@ class HashTable{
             }
         }
     }
-
     display(){
             for(let i = 0 ; i < this.table.length; i ++){
                 if(this.table[i]){
@@ -60,15 +53,9 @@ class HashTable{
             }
     }
 }
-
-
-
-
 const table = new HashTable(50);
-
 table.set("name","sandeep");
 table.set("age",21);
 table.display();
-
 table.remove("age");
 table.display();

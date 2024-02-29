@@ -4,14 +4,12 @@ class Node {
         this.next = null;
     }
 }
-
 class LinkedListStack{
     constructor(){
         this.head = null;
         this.tail = null;
         this.size = 0;
     }
-
     push(value){
         const node = new Node(value);
         if(this.size == 0 ){
@@ -23,7 +21,6 @@ class LinkedListStack{
         }
         this.size ++;
     }
-
     pop(){
         if(this.size == 0){
             return ;
@@ -35,7 +32,6 @@ class LinkedListStack{
         }
         this.size--;
     }
-
     print(){
         if(this.size == 0 ){
             console.log("the stack is empty");
@@ -49,7 +45,6 @@ class LinkedListStack{
             console.log(stackValues);
         }
     }
-
     peek(){
         console.log(this.head.value);
     }
@@ -57,7 +52,6 @@ class LinkedListStack{
         console.log(this.tail.value);
     }
 }
-
 let stack1 = new LinkedListStack();
 stack1.push(10);
 stack1.push(20);

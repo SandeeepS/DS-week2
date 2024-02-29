@@ -1,22 +1,69 @@
-function quickSort(arr){
-      if(arr.length < 2){
-        return arr;
-      }
+class HashTable {
+     constructor(size){
+         this.table = new Array(size);
+         this.size = size;
+     }
 
-      let pivot = arr[0];
-      let leftArr = [];
-      let rightArr   = [];
-
-      for(let i = 1 ; i < arr.length ; i ++){
-        if(arr[i] < pivot){
-            leftArr.push(arr[i]);
-        }else{
-            rightArr.push(arr[i])
+     hash(key){
+        let total = 0;
+        for(let i = 0 ; i < key.length ; i++){
+            total += key.charCodeAt(i);
         }
-      }
+        return total % this.size ;
+     }
 
-      return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
+     set(key,value){
+        let index = this.hash(key);
+        const bucket = this.table[index];
+        if(!bucket){
+            this.table[index] = [[key,value]];
+        }else{
+            const sameKeyItem = bucket.find(item => item[0] === key);
+            if(sameKeyItem){
+                sameKeyItem[1] = value;
+            }else{
+                bucket.push([key,value]);
+            }
+        }
+     }
+
+     get(key){
+        let index = this.hash(key);
+        const bucket = this.table[index];
+        if(bucket){
+            const sameKeyItem = bucket.find(item => item[0] === key);
+            if(sameKeyItem){
+                return sameKeyItem[1];
+            }
+        }
+        return undefined;
+     }
+
+     remove(key){
+        let index = this.hash(key);
+        const bucket = this.table[index];
+        if(bucket){
+            const sameKeyItem = bucket.find(item => item[0] === key);
+            if(sameKeyItem){
+                bucket.splice(bucket.indexOf(sameKeyItem),1);
+            }
+        }
+     }
+
+     display(){
+        for(let i = 0 ; i < this.table.length ; i++){
+            if(this.table[i]){
+                console.log(i,this.table[i]);
+            }
+        }
+     }
 }
 
-const arr = [ 5,2,13,7,5,1];
-console.log(quickSort(arr));
+const hashTable = new HashTable(50);
+hashTable.hash("hello");
+hashTable.set("hello",456);
+hashTable.set(45,789);
+hashTable.set(46,800);
+hashTable.remove(46);
+console.log(hashTable.get(46));
+hashTable.display();

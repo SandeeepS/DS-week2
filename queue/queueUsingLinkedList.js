@@ -5,7 +5,7 @@ class Node {
     }
 }
 
-class LinkedListStack{
+class LinkedListQueue{
     constructor(){
         this.head = null;
         this.tail = null;
@@ -49,7 +49,7 @@ class LinkedListStack{
             console.log(stackValues);
         }
     }
-
+ 
     peek(){
         console.log(this.head.value);
     }
@@ -58,7 +58,7 @@ class LinkedListStack{
     }
 }
 
-let stack1 = new LinkedListStack();
+let stack1 = new LinkedListQueue();
 
 stack1.enqueue(10);
 stack1.enqueue(20);
