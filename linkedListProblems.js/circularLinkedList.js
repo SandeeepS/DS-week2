@@ -1,3 +1,4 @@
+//circular linked list
 //singly list problem 
 
 class Node{
@@ -21,36 +22,33 @@ class doublyLinkedList{
     peek(){
         console.log(this.head.value);
     }
-
     prepend(value){
         let node = new Node(value);
         if(this.isEmpty()){
             this.head = node;
             this.tail = node;
+            this.tail.next = this.head;
         }else{
             node.next = this.head;
             this.head.prev  = node;
             this.head = node;
+            this.tail.next = node;
         }
         this.size ++;
     }
-
     append(value){
         let node = new Node(value);
         if(this.isEmpty()){
              this.head = node;
+             this.tail = node;
+             node.next = this.head;
         }else{
-            let prev = this.head;
-            while(prev && prev.next != null){
-                prev = prev.next;
-            }
-            prev.next = node;
-            node.prev = prev;
+            this.tail.next = node;
             this.tail = node;
+            node.next = this.head;
         }
         this.size ++;
     }
-
     print(){
         if(this.isEmpty()){
             console.log("list is empty");
