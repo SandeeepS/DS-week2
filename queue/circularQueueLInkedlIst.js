@@ -11,7 +11,6 @@
         this.front = null;
         this.rear = null;
         this.size = 0;
-
      }
 
      isEmpty(){

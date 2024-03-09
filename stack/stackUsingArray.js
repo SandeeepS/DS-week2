@@ -39,5 +39,4 @@ stack1.push(20);
 stack1.push(55);
 stack1.push(66);
 stack1.push(66);
-
 stack1.print();

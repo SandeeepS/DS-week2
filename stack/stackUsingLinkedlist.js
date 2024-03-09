@@ -61,5 +61,7 @@ stack1.print();
 stack1.pop();
 stack1.print();
 stack1.peek();
-stack1.getTail();
+
+
+
 

@@ -44,27 +44,41 @@ class stack{
         if(this.size == 0){
             return ;
         }else{
+            let popedElement = this.head.value;
             let prev = this.head;
             prev = this.head.next;
             this.head.next = null;
             this.head = prev;
+            this.currentLength--
+            return popedElement;
+            
         }
-        this.currentLength--
+       
     }
 
+    // reverse(){
+    //     let reversedString = [];
+    //     while(this.currentLength > 0){
+    //         let poppedNode = this.head;
+    //         this.head = this.head.next;
+    //         this.currentLength--;
+    //         reversedString.unshift(poppedNode.value)
+    //     }
+
+    //     this.head = null;
+    //     this.tail = null;
+    //     return reversedString.join("");
+
+    // }
+
     reverse(){
-        let reversedString = [];
+        let stack2 = new stack();
         while(this.currentLength > 0){
-            let poppedNode = this.head;
-            this.head = this.head.next;
-            this.currentLength--;
-            reversedString.unshift(poppedNode.value)
+            const popedElement = stack1.pop();
+            stack2.push(popedElement);
         }
-
-        this.head = null;
-        this.tail = null;
-        return reversedString.join("");
-
+        console.log("stack 2 is")
+        stack2.print();
     }
     print(){
         if(this.size == 0 ){
@@ -98,4 +112,4 @@ stack1.push("e");
 stack1.push("p");
 
 stack1.print();
-console.log(stack1.reverse());
+stack1.reverse();

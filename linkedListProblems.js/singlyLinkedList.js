@@ -80,13 +80,30 @@ class linkedList{
             }
         }
     }
+    reverse(){
+        if(this.isEmpty()){
+            return ;
+        }else{
+            let reversed = '';
+            let curr = this.head;
+            while(curr){
+                reversed = curr.value + reversed;
+                curr = curr.next;
+            }
+            console.log(reversed);
+        }
+    }
 }
 
 let linkedList1 = new linkedList();
-linkedList1.prepend(10);
-linkedList1.prepend(20);
-linkedList1.prepend(30);
-linkedList1.append(100);
-linkedList1.append(120);
+linkedList1.append("s");
+linkedList1.append("a");
+linkedList1.append("n");
+linkedList1.append("d");
+linkedList1.append("e");
+linkedList1.append("e");
+linkedList1.append("p");
+
 linkedList1.print();
-linkedList1.removeByValue(20);
+linkedList1.reverse()
+

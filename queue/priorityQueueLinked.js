@@ -63,6 +63,6 @@ class PriorityQueue{
 const pQueue = new PriorityQueue();
 pQueue.enqueue(20,1);
 pQueue.enqueue(30,3);
-pQueue.enqueue(40,2);
-pQueue.enqueue(50,4);
+pQueue.enqueue(40,4);
+pQueue.enqueue(50,2);
 pQueue.print();
