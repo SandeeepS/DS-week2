@@ -1,5 +1,5 @@
 //circular linked list
-//singly list problem 
+
 
 class Node{
     constructor(value){
