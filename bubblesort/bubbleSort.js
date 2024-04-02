@@ -15,4 +15,4 @@ function bubbleSort(arr){
 }
 
 const arr = [3,6,5,4,9,1,4];
-bubbleSort(arr)
+bubbleSort(arr);
