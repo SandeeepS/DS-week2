@@ -58,4 +58,3 @@ table.set("name","sandeep");
 table.set("age",21);
 table.display();
 table.remove("age");
-table.display();
