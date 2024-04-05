@@ -5,7 +5,3 @@ function quickSort(arr){
         
     }
 }
-
-function x (){
-
-}
