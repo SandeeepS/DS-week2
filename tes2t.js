@@ -12,4 +12,5 @@ obj2.address.city = "Ranni";
 console.log(obj1.name);
 console.log(obj2.name);
 console.log(obj1.address.city);
+console.log("")
 
